@@ -15,20 +15,24 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import cafe.adriel.voyager.androidx.AndroidScreen
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.nimtego.plectrum_compose.R
 import com.nimtego.plectrum_compose.ui.theme.ComposeTheme
 import com.nimtego.plectrum_compose.ui.theme.MainColor
 
-class SplashScreen : AndroidScreen() {
+object SplashScreen : AndroidScreen() {
 
     @Composable
     override fun Content() {
-//        val navigator = LocalNavigator.currentOrThrow
-//        val viewModel: SplashViewModel = hiltViewModel()
+        val navigator = LocalNavigator.currentOrThrow
+        val viewModel: SplashViewModel = hiltViewModel()
         val systemUiController = rememberSystemUiController()
         val useDarkIcons = MaterialTheme.colors.isLight
+
         SideEffect {
             with(systemUiController) {
                 setSystemBarsColor(color = MainColor, darkIcons = useDarkIcons)
@@ -57,6 +61,6 @@ class SplashScreen : AndroidScreen() {
 @Composable
 fun SplashScreenPreview() {
     ComposeTheme {
-        SplashScreen().Content()
+        SplashScreen.Content()
     }
 }
