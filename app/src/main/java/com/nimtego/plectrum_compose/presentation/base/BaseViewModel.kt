@@ -1,6 +1,7 @@
 package com.nimtego.plectrum_compose.presentation.base
 
 import androidx.lifecycle.*
+import cafe.adriel.voyager.navigator.Navigator
 import com.nimtego.plectrum_compose.common.Failure
 import com.nimtego.plectrum_compose.common.ServerError
 import com.nimtego.plectrum_compose.presentation.common.FeatureEvent
@@ -34,6 +35,7 @@ abstract class BaseViewModel<I : FeatureEvent> : ViewModel(), LifecycleObserver 
     open fun onViewHidden() {}
 
     abstract fun onEvent(event: I)
+    abstract fun navigator(navigator: Navigator)
 
     //FIXME later do abstract
     protected open fun transformThrowable(throwable: Throwable): Failure {

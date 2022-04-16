@@ -1,8 +1,10 @@
 package com.nimtego.plectrum_compose.presentation.splash
 
 import androidx.compose.foundation.lazy.LazyListState
+import cafe.adriel.voyager.navigator.Navigator
 import com.nimtego.plectrum_compose.presentation.base.BaseViewModel
 import com.nimtego.plectrum_compose.presentation.common.BaseEvent
+import com.nimtego.plectrum_compose.presentation.main.MainAppScreen
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -17,6 +19,8 @@ class SplashViewModel @Inject constructor() : BaseViewModel<BaseEvent>() {
     var stateList: LazyListState? = null
     private val title: MutableSharedFlow<String> = MutableStateFlow("Screen first: title 0")
     val flowTitle: Flow<String> = title
+
+    var navigator: Navigator? = null
 
 //    private val simpleItem = MutableStateFlow<List<SimpleItemModel>>(emptyList())
 //    val flowSimpleItem: Flow<List<SimpleItemModel>> = simpleItem
@@ -38,8 +42,13 @@ class SplashViewModel @Inject constructor() : BaseViewModel<BaseEvent>() {
 
     override fun onEvent(event: BaseEvent) {
         when(event) {
+            BaseEvent.LogoClick -> navigator?.push(MainAppScreen)
             //BaseEvent.Second -> routeNavigator.navigateToRoute(AppScreens.SecondScreen)
         }
+    }
+
+    override fun navigator(navigator: Navigator) {
+        this.navigator = navigator
     }
 
 //    fun getRand(): List<SimpleItemModel> {
