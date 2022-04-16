@@ -68,8 +68,10 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.38.1"
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
 
-    implementation "cafe.adriel.voyager:voyager-navigator:1.0.0-beta16"
-    implementation "cafe.adriel.voyager:voyager-androidx:1.0.0-beta16"
+    //Voyager
+    implementation "cafe.adriel.voyager:voyager-navigator:$voyager_version"
+    implementation "cafe.adriel.voyager:voyager-androidx:$voyager_version"
+    implementation "cafe.adriel.voyager:voyager-tab-navigator:$voyager_version"
 
     //Accompanist
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.24.6-alpha"
