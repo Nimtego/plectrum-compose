@@ -1,4 +1,4 @@
-package com.nimtego.plectrum_compose.presentation.main
+package com.nimtego.plectrum_compose.presentation.main.tabs
 
 import android.util.Log
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -16,9 +16,6 @@ import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.tab.LocalTabNavigator
 import cafe.adriel.voyager.navigator.tab.Tab
 import com.nimtego.plectrum_compose.presentation.base.BaseFlowNavigationScreen
-import com.nimtego.plectrum_compose.presentation.main.tabs.FavoritesTab
-import com.nimtego.plectrum_compose.presentation.main.tabs.HomeTab
-import com.nimtego.plectrum_compose.presentation.main.tabs.ProfileTab
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
