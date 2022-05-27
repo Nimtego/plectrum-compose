@@ -77,8 +77,8 @@ object MainAppScreen : AndroidScreen() {
 
 @Preview(showBackground = true)
 @Composable
-fun SplashScreenPreview() {
+fun MainAppScreenPreview() {
     ComposeTheme {
-        SplashScreen.Content()
+        MainAppScreen.Content()
     }
 }

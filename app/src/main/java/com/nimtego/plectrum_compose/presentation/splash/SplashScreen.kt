@@ -30,10 +30,12 @@ object SplashScreen : AndroidScreen() {
 
     @Composable
     override fun Content() {
-        val viewModel = hiltViewModel<SplashViewModel>()
-            .also {
-                it.navigator = LocalNavigator.currentOrThrow
-            }
+        val viewModel: SplashViewModel = hiltViewModel()
+        viewModel.navigator = LocalNavigator.currentOrThrow
+//        val viewModel = hiltViewModel<SplashViewModel>()
+//            .also {
+//                it.navigator = LocalNavigator.currentOrThrow
+//            }
 
         val systemUiController = rememberSystemUiController()
         val useDarkIcons = MaterialTheme.colors.isLight
@@ -57,7 +59,9 @@ object SplashScreen : AndroidScreen() {
                 modifier = Modifier
                     .size(130.dp)
                     .padding(8.dp)
-                    .clickable { viewModel.onEvent(BaseEvent.LogoClick) },
+                    .clickable {
+                        viewModel.onEvent(BaseEvent.LogoClick)
+                    },
                 contentScale = ContentScale.Fit,
             )
         }
