@@ -1,4 +1,4 @@
-package com.nimtego.plectrum_compose.common
+package com.nimtego.common
 
 // Extend this class for feature specific failures.
 abstract class FeatureFailure : Failure()
