@@ -1,6 +1,6 @@
 package com.nimtego.plectrum_compose.presentation.common
 
-import com.nimtego.plectrum_compose.common.Failure
+import com.nimtego.common.Failure
 import com.nimtego.plectrum_compose.presentation.common.ViewState.Status.*
 
 class ViewState<D>(

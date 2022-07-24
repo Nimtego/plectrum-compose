@@ -2,8 +2,8 @@ package com.nimtego.plectrum_compose.presentation.base
 
 import androidx.lifecycle.*
 import cafe.adriel.voyager.navigator.Navigator
-import com.nimtego.plectrum_compose.common.Failure
-import com.nimtego.plectrum_compose.common.ServerError
+import com.nimtego.common.Failure
+import com.nimtego.common.ServerError
 import com.nimtego.plectrum_compose.presentation.common.FeatureEvent
 import com.nimtego.plectrum_compose.presentation.common.ViewState
 import kotlinx.coroutines.CoroutineScope
@@ -12,7 +12,6 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext

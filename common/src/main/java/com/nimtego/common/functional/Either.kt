@@ -1,4 +1,4 @@
-package com.nimtego.plectrum_compose.common
+package com.nimtego.common.functional
 
 
 sealed class Either<out L, out R> {
